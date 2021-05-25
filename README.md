@@ -27,8 +27,6 @@ Konteinerių atminties perskirstymų skaičius testavimo metu nesiskyrė:
 
 ## Keleto funkcijų testavimas
 
-Kaip jau buvo galima suprasti iš pirmųjų testų, push_back() veikia taip, kaip turėtų.
-
 ### Operatoriai
 
 Tikrinti visi lyginimo operatoriai:
@@ -114,4 +112,47 @@ cout<<"a size: "<<a.size()<<endl;
 Kaip matome žemiau, gauname 3:
 ```shell
 a size: 3
+```
+
+### begin()
+
+Grąžina pradžios iteratorių:
+```shell
+iterator begin() noexcept { return data; }
+```
+Testuosime su tuo pačiu konteineriu a:
+```shell
+Vector<int> a = { 0, 1, 2 };
+cout<<"a.begin() ir elementai po to: "<<*(a.begin())<<*(a.begin()+1)<<*(a.begin()+2)<<endl;
+```
+Taigi, gauname tai, ką ir turėjome gauti - "012":
+```shell
+a.begin() ir elementai po to: 012
+```
+
+### push_back()
+
+Kaip jau buvo galima suprasti iš pirmųjų testų, push_back() veikia taip, kaip turėtų, bet vis tiek galima pavaizduoti testavimą.
+
+Pridedamas naujas elementas po paskutinio inicializuoto elemento:
+```shell
+void push_back(const T& val);
+```
+Testuosime su tuo pačiu konteineriu a:
+```shell
+Vector<int> a = { 0, 1, 2 };
+a.push_back(4);
+a.push_back(6);
+for (int i = 0; i<a.size(); i++)
+{
+    cout<<"a "<<i<<" elementas: "<<a[i]<<endl;
+}
+```
+Gautas atsakymas:
+```shell
+a 0 elementas: 0
+a 1 elementas: 1
+a 2 elementas: 2
+a 3 elementas: 4
+a 4 elementas: 6
 ```
