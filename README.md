@@ -25,6 +25,24 @@ Konteinerių atminties perskirstymų skaičius testavimo metu nesiskyrė:
 | Vector         | 11           | 15            | 18             | 21              | 25               |
 | std::vector    | 11           | 15            | 18             | 21              | 25               |
 
+### Testavimas su v2.0
+
+Vėliau pabandžiau naudoti šį Vector su jau turima Studentų Pažymių programa (v2.0). Viskas veikė teisingai, tad atlikau porą spartos testų:
+
+#### Su 100000 studentų
+
+| Konteineris    | Nuskaitymas   | Rūšiavimas   | Išvedimas      | **Galutinis laikas** |
+| :------------- | :------------ | :----------- | :------------- | :------------------- |
+| Vector         | 0.60065       | 0.14792      | 0.26582        | 1.01841              |
+| std::vector    | 0.59477       | 0.14890      | 0.27523        | 1.02939              |
+
+#### Su 1000000 studentų
+
+| Konteineris    | Nuskaitymas   | Rūšiavimas   | Išvedimas      | **Galutinis laikas** |
+| :------------- | :------------ | :----------- | :------------- | :------------------- |
+| Vector         | 5.00921       | 1.65506      | 1.63270        | 9.29882              |
+| std::vector    | 5.02914       | 1.70405      | 1.69789        | 9.43689              |
+
 ## Keleto funkcijų testavimas
 
 ### Operatoriai
